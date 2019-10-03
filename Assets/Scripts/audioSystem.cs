@@ -40,7 +40,17 @@ public class audioSystem : MonoBehaviour
     {
         if (sceneAudiosToPlay[whichSound] != null)
         {
-            sceneAudiosToPlay[whichSound].Play();
+            if (whichSound == 0)
+            {
+                if (!sceneAudiosToPlay[whichSound].isPlaying)
+                {
+                    sceneAudiosToPlay[whichSound].Play();
+                }
+            }
+            else
+            {
+                sceneAudiosToPlay[whichSound].Play();
+            }            
         }        
     }
 

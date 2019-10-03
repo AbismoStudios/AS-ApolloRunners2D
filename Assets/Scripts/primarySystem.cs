@@ -64,7 +64,18 @@ public class primarySystem : MonoBehaviour
     {
         audioSystemScript.PlayTheSound(1);
         audioSystemScript.StopTheSound(0);
-        StartCoroutine(ToTheGame());
+        StartCoroutine(MenuTimer(1));
+    }
+
+    public void ButtonTutorial()
+    {
+        //tutorialButton
+        StartCoroutine(MenuTimer(2));
+    }
+
+    public void ButtonSair()
+    {
+        StartCoroutine(MenuTimer(3));
     }
 
     public void SkipVictoryScreen()
@@ -72,9 +83,20 @@ public class primarySystem : MonoBehaviour
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }    
 
-    IEnumerator ToTheGame()
+    IEnumerator MenuTimer(int whichButton)
     {
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Game", LoadSceneMode.Single);
+        if (whichButton == 1)
+        {
+            SceneManager.LoadScene("Game", LoadSceneMode.Single);
+        }
+        else if (whichButton == 2)
+        {
+            //tutorialButton
+        }
+        else if (whichButton == 3)
+        {
+            Application.Quit();
+        }        
     }
 }

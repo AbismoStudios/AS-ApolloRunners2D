@@ -113,7 +113,7 @@ public class inGameSystem : MonoBehaviour
         totalTimerSeconds = 0.0f;
         playerTimerOptionInMin = playerTimerSaver;
         necessaryDistance = necessaryDistanceSaver;
-        Debug.Log("Necessary Distance Saver " + necessaryDistanceSaver);
+        //Debug.Log("Necessary Distance Saver " + necessaryDistanceSaver);
         playingMatch = true;        
         StartCoroutine(TimerOfRaceStart());
     }
@@ -373,7 +373,7 @@ public class inGameSystem : MonoBehaviour
     }
 
     IEnumerator GameTimerDisplay()
-    {
+    {        
         while (true)
         {
             if (totalTimerSeconds == 0 && playerTimerOptionInMin != 0)
@@ -399,7 +399,7 @@ public class inGameSystem : MonoBehaviour
 
             if ((playerTimerSaver / 2) == playerTimerOptionInMin && totalTimerSeconds == 0)
             {
-                Debug.Log("Metade do tempo");
+                //Debug.Log("Metade do tempo");
                 suddenDeathTimer = true;
             }       
 

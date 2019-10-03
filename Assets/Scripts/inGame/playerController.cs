@@ -14,6 +14,9 @@ public class playerController : MonoBehaviour
     [Header("Read Only Properties")]
     private Rigidbody2D shipBody;
 
+    private float playerHorizontal;
+    private float playerVertical;
+
     private GameObject inGameSystemObj;
     public inGameSystem gameSystemScript;
     
@@ -97,7 +100,10 @@ public class playerController : MonoBehaviour
         {
             if (player == 1)
             {
-                if (Input.GetKey(KeyCode.D))
+                //Arcade inputs
+                playerHorizontal = Input.GetAxis("HORIZONTAL0");
+                playerVertical = Input.GetAxis("VERTICAL0");
+                if ((Input.GetKey(KeyCode.D)) || playerHorizontal > 0.0f)
                 {
                     if (canIniciate == false && alreadyIniciated == 0)
                     {                        
@@ -114,15 +120,15 @@ public class playerController : MonoBehaviour
                         StopCoroutine(ABreaker());
                         modeAceleration = 1;
                     }
-                    if (Input.GetKey(KeyCode.W))
+                    if ((Input.GetKey(KeyCode.W)) || playerVertical > 0.0f)
                     {
                         shipBody.AddForce(new Vector2(0.0f, shipY), ForceMode2D.Impulse);
                         if (actualRotation.z < 10)
-                        {                            
+                        {
                             transform.Rotate(0.0f, 0.0f, 1.0f, Space.Self);
-                        }                        
+                        }
                     }
-                    else if (Input.GetKey(KeyCode.S))
+                    else if ((Input.GetKey(KeyCode.S)) || playerVertical < 0.0f) 
                     {                        
                         shipBody.AddForce(new Vector2(0.0f, (-shipY)),ForceMode2D.Impulse);
                         if (actualRotation.z > -10)
@@ -130,7 +136,7 @@ public class playerController : MonoBehaviour
                             transform.Rotate(0.0f, 0.0f, -1.0f, Space.Self);
                         }
                     }
-                    if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+                    if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && playerVertical == 0.0f)
                     {
                         if (actualRotation.z > 0)
                         {
@@ -157,7 +163,10 @@ public class playerController : MonoBehaviour
             }
             else if (player == 2)
             {
-                if (Input.GetKey(KeyCode.RightArrow))
+                //Arcade inputs
+                playerHorizontal = Input.GetAxis("HORIZONTAL1");
+                playerVertical = Input.GetAxis("VERTICAL1");
+                if ((Input.GetKey(KeyCode.RightArrow)) || playerHorizontal > 0.0f)
                 {
                     if (canIniciate == false && alreadyIniciated == 0)
                     {
@@ -174,7 +183,7 @@ public class playerController : MonoBehaviour
                         StopCoroutine(ABreaker());
                         modeAceleration = 1;
                     }
-                    if (Input.GetKey(KeyCode.UpArrow))
+                    if ((Input.GetKey(KeyCode.UpArrow)) || playerVertical > 0.0f)
                     {
                         shipBody.AddForce(new Vector2(0.0f, shipY), ForceMode2D.Impulse);
                         if (actualRotation.z < 10)
@@ -182,7 +191,7 @@ public class playerController : MonoBehaviour
                             transform.Rotate(0.0f, 0.0f, 1.0f, Space.Self);
                         }
                     }
-                    else if (Input.GetKey(KeyCode.DownArrow))
+                    else if ((Input.GetKey(KeyCode.DownArrow)) || playerVertical < 0.0f)
                     {
                         shipBody.AddForce(new Vector2(0.0f, (-shipY)), ForceMode2D.Impulse);
                         if (actualRotation.z > -10)
@@ -190,7 +199,7 @@ public class playerController : MonoBehaviour
                             transform.Rotate(0.0f, 0.0f, -1.0f, Space.Self);
                         }
                     }
-                    if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
+                    if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && playerVertical == 0.0f)
                     {
                         if (actualRotation.z > 0)
                         {
