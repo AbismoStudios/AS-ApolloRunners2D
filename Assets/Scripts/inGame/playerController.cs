@@ -24,7 +24,7 @@ public class playerController : MonoBehaviour
     public float modeAceleration;
     private int changeAceleration = 0;
     private float changeAcelerationTimer;
-    private bool acelerating = false;
+    public bool acelerating = false;
     public float shipX;
     private float shipY;
     public float actualVelocity;
