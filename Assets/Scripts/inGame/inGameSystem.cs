@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -52,16 +53,16 @@ public class inGameSystem : MonoBehaviour
     private GameObject BlackBackground;
     private int iniciate;
 
-    private Text SSTimerText;
-    private Text SSNecessaryDistanceText;
-    private Text SSScorePOneText;
-    private Text SSScorePTwoText;
+    private TextMeshProUGUI SSTimerText;
+    private TextMeshProUGUI SSNecessaryDistanceText;
+    private TextMeshProUGUI SSScorePOneText;
+    private TextMeshProUGUI SSScorePTwoText;
 
-    private Text BCTimerText;
-    private Text BCScoreOneText;
-    private Text BCScoreTwoText;
+    private TextMeshProUGUI BCTimerText;
+    private TextMeshProUGUI BCScoreOneText;
+    private TextMeshProUGUI BCScoreTwoText;
 
-    public Text BothCameraText;
+    public TextMeshProUGUI BothCameraText;
 
     private int winnerPlayer = 0;
     private bool playingMatch = true;
@@ -330,15 +331,15 @@ public class inGameSystem : MonoBehaviour
         BCScoreTwo = GameObject.Find("BCScorePTwo");
         BCTimer = GameObject.Find("BCMatchTimer");
 
-        SSTimerText = SSTimer.GetComponent<Text>();
-        SSNecessaryDistanceText = SSNecessaryDistance.GetComponent<Text>();
-        SSScorePOneText = SSScorePOne.GetComponent<Text>();
-        SSScorePTwoText = SSScorePTwo.GetComponent<Text>();
+        SSTimerText = SSTimer.GetComponent<TextMeshProUGUI>();
+        SSNecessaryDistanceText = SSNecessaryDistance.GetComponent<TextMeshProUGUI>();
+        SSScorePOneText = SSScorePOne.GetComponent<TextMeshProUGUI>();
+        SSScorePTwoText = SSScorePTwo.GetComponent<TextMeshProUGUI>();
 
-        BothCameraText = BothCameraTextObj.GetComponent<Text>();
-        BCScoreOneText = BCScoreOne.GetComponent<Text>();
-        BCScoreTwoText = BCScoreTwo.GetComponent<Text>();
-        BCTimerText = BCTimer.GetComponent<Text>();
+        BothCameraText = BothCameraTextObj.GetComponent<TextMeshProUGUI>();
+        BCScoreOneText = BCScoreOne.GetComponent<TextMeshProUGUI>();
+        BCScoreTwoText = BCScoreTwo.GetComponent<TextMeshProUGUI>();
+        BCTimerText = BCTimer.GetComponent<TextMeshProUGUI>();
 
         BlackBackground = GameObject.Find("BlackBackground");
     }

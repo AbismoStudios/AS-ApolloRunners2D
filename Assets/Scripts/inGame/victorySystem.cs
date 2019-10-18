@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,8 @@ public class victorySystem : MonoBehaviour
 
     private GameObject PlayerVictoryTextObj;
     private GameObject TimerTextObj;
-    private Text PlayerVictoryText;
-    private Text TimerText;
+    private TextMeshProUGUI PlayerVictoryText;
+    private TextMeshProUGUI TimerText;
 
     private GameObject primarySystemObject;
     public primarySystem primarySystemScript;
@@ -57,8 +58,9 @@ public class victorySystem : MonoBehaviour
 
         PlayerVictoryTextObj = GameObject.Find("PlayerVictoryText");
         TimerTextObj = GameObject.Find("TimerText");
-        PlayerVictoryText = PlayerVictoryTextObj.GetComponent<Text>();
-        TimerText = TimerTextObj.GetComponent<Text>();
+
+        PlayerVictoryText = PlayerVictoryTextObj.GetComponent<TextMeshProUGUI>();
+        TimerText = TimerTextObj.GetComponent<TextMeshProUGUI>();
 
         primarySystemScript.AssociatePrimarySystemAudio();
     }

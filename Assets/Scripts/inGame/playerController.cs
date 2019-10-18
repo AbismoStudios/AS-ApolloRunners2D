@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,8 +42,8 @@ public class playerController : MonoBehaviour
     private GameObject playerCameraText1;
     private GameObject playerCameraText2;
     private bool associated = false;
-    private Text scoreText;
-    private Text velocityText;
+    private TextMeshProUGUI scoreText;
+    private TextMeshProUGUI velocityText;
 
     public GameObject yourShip;
     public GameObject anotherShip;
@@ -302,24 +303,24 @@ public class playerController : MonoBehaviour
         if (player == 1)
         {
             playerCameraText1 = GameObject.Find("TextShip1");
-            scoreText = playerCameraText1.GetComponent<Text>();
+            scoreText = playerCameraText1.GetComponent<TextMeshProUGUI>();
             yourShip = GameObject.Find("Player1Ship");
             anotherShip = GameObject.Find("Player2Ship");
 
             playerCameraText2 = GameObject.Find("VelocityShip1");
-            velocityText = playerCameraText2.GetComponent<Text>();
+            velocityText = playerCameraText2.GetComponent<TextMeshProUGUI>();
 
             associated = true;
         }
         else if (player == 2)
         {
             playerCameraText1 = GameObject.Find("TextShip2");
-            scoreText = playerCameraText1.GetComponent<Text>();
+            scoreText = playerCameraText1.GetComponent<TextMeshProUGUI>();
             yourShip = GameObject.Find("Player2Ship");
             anotherShip = GameObject.Find("Player1Ship");
 
             playerCameraText2 = GameObject.Find("VelocityShip2");
-            velocityText = playerCameraText2.GetComponent<Text>();
+            velocityText = playerCameraText2.GetComponent<TextMeshProUGUI>();
                        
             associated = true;
         }
