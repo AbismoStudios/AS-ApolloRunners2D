@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,18 +15,21 @@ public class inGameSystem : MonoBehaviour
     public playerController playerOneScript;
     public playerController playerTwoScript;
 
+    public perkSystem playerOnePerkSystemScript;
+    public perkSystem playerTwoPerkSystemScript;
+
     private GameObject primarySystemObject;
     public primarySystem primarySystemScript;
 
     private GameObject audioSystemObj;
-    public audioSystem audioSystemScript;
+    public audioSystem audioSystemScript;    
 
     private GameObject botCollider;
     private GameObject topCollider;
-    public float colliderPossitionY = 25.0f;
+    public float colliderPossitionY = 50.0f;
 
-    private Vector3 posPlayerOne;
-    private Vector3 posPlayerTwo;
+    public Vector3 posPlayerOne;
+    public Vector3 posPlayerTwo;
     private float distanceBetween;
     private float meanBetweenShips;   
 
@@ -78,12 +82,17 @@ public class inGameSystem : MonoBehaviour
         audioSystemObj = GameObject.FindWithTag("CameraListener");
         audioSystemScript = audioSystemObj.GetComponent<audioSystem>();
 
+        colliderPossitionY = 50.0f;
+
         AssociateShips();
         AssociateTexts();
         CheckSandbox();
         CalculateScore();
 
         primarySystemScript.AssociatePrimarySystemAudio();
+
+        //distancia da partida sem sandbox
+        necessaryDistance = 4000.0f;
 
 
         playerTimerSaver = playerTimerOptionInMin;
@@ -100,6 +109,8 @@ public class inGameSystem : MonoBehaviour
         someoneBurned = false;
         someoneWon = false;
         StartCoroutine(GameTimerDisplay()); //MatchTimer
+        playerOnePerkSystemScript.CallPerkTimer();
+        playerTwoPerkSystemScript.CallPerkTimer();
     }
 
     void MatchReStart()
@@ -165,6 +176,9 @@ public class inGameSystem : MonoBehaviour
 
         playerOneScript = playerOneShip.GetComponent<playerController>();
         playerTwoScript = playerTwoShip.GetComponent<playerController>();
+
+        playerOnePerkSystemScript = playerOneShip.GetComponent<perkSystem>();
+        playerTwoPerkSystemScript = playerTwoShip.GetComponent<perkSystem>();
         
 
         botCollider = GameObject.Find("BotCollider");
@@ -204,8 +218,8 @@ public class inGameSystem : MonoBehaviour
         topCollider.transform.position = new Vector3(meanBetweenShips, colliderPossitionY, 0.0f);
         botCollider.transform.position = new Vector3(meanBetweenShips, -colliderPossitionY, 0.0f);
 
-        topCollider.transform.localScale = new Vector3((distanceBetween + 50.0f), 1.0f, 3.0f);
-        botCollider.transform.localScale = new Vector3((distanceBetween + 50.0f), 1.0f, 3.0f);        
+        topCollider.transform.localScale = new Vector3((distanceBetween + 100.0f), 1.0f, 3.0f);
+        botCollider.transform.localScale = new Vector3((distanceBetween + 100.0f), 1.0f, 3.0f);        
     }
 
     void CheckSandbox()
@@ -274,15 +288,21 @@ public class inGameSystem : MonoBehaviour
         {            
             yield return new WaitForSeconds(1.0f);
             //3
+            BothCameraTextObj.transform.DOScale(2.0f, 0.0f);
+            BothCameraTextObj.transform.DOScale(1.0f, 1.0f);
             BothCameraText.text = "3";
             audioSystemScript.PlayTheSound(1);
             someoneBurned = false;
             yield return new WaitForSeconds(1.0f);
             //2
+            BothCameraTextObj.transform.DOScale(2.0f, 0.0f);
+            BothCameraTextObj.transform.DOScale(1.0f, 1.0f);
             BothCameraText.text = "2";
             audioSystemScript.PlayTheSound(1);
             yield return new WaitForSeconds(1.0f);
             //1
+            BothCameraTextObj.transform.DOScale(2.0f, 0.0f);
+            BothCameraTextObj.transform.DOScale(1.0f, 1.0f);
             BothCameraText.text = "1";
             audioSystemScript.PlayTheSound(1);
             //liberar player
@@ -424,6 +444,29 @@ public class inGameSystem : MonoBehaviour
             yield return new WaitForSeconds(1.0f);            
         }
     }  
+
+    //PerkAssociation
+    public void CallForThePerkPrefab(int whatIsHappening)
+    {
+        if (whatIsHappening == 1)
+        {
+            //desacelerar player two
+            playerTwoScript.modeAceleration = 1;
+        }
+        else if (whatIsHappening == 2)
+        {
+            //desacelerar player one
+            playerOneScript.modeAceleration = 1;
+        }
+        else if (whatIsHappening == 3)
+        {
+            playerTwoScript.modeAceleration = 1;
+        }
+        else if (whatIsHappening == 4)
+        {
+            playerOneScript.modeAceleration = 1;
+        }
+    }
 
     public void FatalError()
     {

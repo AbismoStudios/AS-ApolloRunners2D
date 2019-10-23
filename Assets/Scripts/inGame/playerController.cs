@@ -20,6 +20,8 @@ public class playerController : MonoBehaviour
 
     private GameObject inGameSystemObj;
     public inGameSystem gameSystemScript;
+
+    public perkSystem playerPerkScript; 
     
     private float modeBreaker;
     public float modeAceleration;
@@ -155,11 +157,17 @@ public class playerController : MonoBehaviour
                     {
                         shipBody.AddForce(new Vector2(modeBreaker, 0.0f), ForceMode2D.Force);
                     }
-                    acelerating = false;
+                        acelerating = false;
                     if (changeAceleration == 0 && modeAceleration < shipX)
                     {
                         StartCoroutine(ABreaker());
                     }
+                }
+
+                //perk
+                if ((Input.GetKeyDown(KeyCode.H)) || (Input.GetKeyDown(KeyCode.LeftControl)))
+                {
+                    playerPerkScript.CallThePerk();
                 }
             }
             else if (player == 2)
@@ -224,6 +232,12 @@ public class playerController : MonoBehaviour
                         StartCoroutine(ABreaker());
                     }
                 }
+
+                //perk
+                if ((Input.GetKeyDown(KeyCode.J)) || (Input.GetKeyDown(KeyCode.RightControl)))
+                {
+                    playerPerkScript.CallThePerk();
+                }
             }
             else
             {
@@ -252,7 +266,7 @@ public class playerController : MonoBehaviour
             }
             else if (angularRandomizer == 1)
             {
-                transform.Rotate(0.0f, 0.0f, 0.5f, Space.Self);
+                transform.Rotate(0.0f, 0.0f, -0.5f, Space.Self);
             }
         }
         else if (actualVelocity > 1500.0f)
@@ -264,7 +278,7 @@ public class playerController : MonoBehaviour
             }
             else if (angularRandomizer == 1)
             {
-                transform.Rotate(0.0f, 0.0f, 1.5f, Space.Self);
+                transform.Rotate(0.0f, 0.0f, -1.5f, Space.Self);
             }
         }
 
@@ -332,6 +346,7 @@ public class playerController : MonoBehaviour
         yourOriginalPosition = this.transform.position;
         inGameSystemObj = GameObject.FindWithTag("System");
         gameSystemScript = inGameSystemObj.GetComponent<inGameSystem>();
+        playerPerkScript = this.GetComponent<perkSystem>();        
     }
 
     void BurnedRaceStart(int which)
