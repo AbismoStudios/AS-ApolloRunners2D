@@ -15,7 +15,8 @@ public class primarySystem : MonoBehaviour
     public int whichPlayerIsTheVictoryOne;
     
     void Start()
-    {        
+    {
+        Cursor.visible = false;
         playerVictoryScreenText = "";
         AssociatePrimarySystemAudio();        
     }
@@ -52,6 +53,11 @@ public class primarySystem : MonoBehaviour
         {
 
         }
+
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton9)))
+        {
+            Application.Quit();
+        }         
     }
 
     public void Awake()

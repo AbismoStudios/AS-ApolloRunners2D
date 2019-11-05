@@ -57,6 +57,7 @@ public class trackCamera : MonoBehaviour
             {
                 //both camera activated
                 bothCameraComponent.enabled = true;
+                ResetOffset(pos1, pos2);
             }
             else
             {
@@ -132,6 +133,23 @@ public class trackCamera : MonoBehaviour
         thisCamera = this.GetComponent<Camera>();
         originalCameraSize = thisCamera.orthographicSize;
         shipScript = ship.GetComponent<playerController>();        
+    }
+
+    public void ResetOffset(Vector3 playerOne, Vector3 playerTwo)
+    {
+        if (bothCamera == true)
+        {
+            if (playerOne.y > playerTwo.y)
+            {
+                float tempPositionVector = (playerOne.y + playerTwo.y) / 2;
+                this.transform.position = new Vector3(playerOne.x, tempPositionVector, 0.0f);
+            }
+            else
+            {
+                float tempPositionVector = (playerTwo.y + playerOne.y) / 2;
+                this.transform.position = new Vector3(playerTwo.x, tempPositionVector, 0.0f);
+            }            
+        }
     }
 
     //corotine

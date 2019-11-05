@@ -53,7 +53,6 @@ public class particleSystem : MonoBehaviour
             sSpeed.simulationSpeed = 0.0f;
             sSpeed.startLifetime = 0.0f;
             shipParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-            //includeChildren, ParticleSystemStopBehavior.StopEmittingAndClear
         }
     }
 

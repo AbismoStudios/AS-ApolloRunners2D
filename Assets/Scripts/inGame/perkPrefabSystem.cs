@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ public class perkPrefabSystem : MonoBehaviour
     private GameObject inGameSystemObj;
     public inGameSystem gameSystemScript;
 
+    private BoxCollider2D beaconCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +29,17 @@ public class perkPrefabSystem : MonoBehaviour
 
         if (whatPerk == 1)
         {
-
+            
         }        
         else if (whatPerk == 2)
         {
-            //beacon            
-            //thisRigidbody.velocity = new Vector3(100.0f, 0.0f, 0.0f);
+            beaconCollider = this.GetComponent<BoxCollider2D>();
+            beaconCollider.enabled = false;
+            this.transform.DOScale(3.0f, 0.0f);
+            this.transform.DOScale(5.0f, 2.5f);
+            ParticleSystem tempParticleObj = GetComponentInChildren<ParticleSystem>();
+            tempParticleObj.transform.DOScale(3.0f, 0.0f);
+            tempParticleObj.transform.DOScale(5.0f, 2.5f);
         }
     }
 
@@ -49,20 +57,36 @@ public class perkPrefabSystem : MonoBehaviour
         else if (whatPerk == 2)
         {
             //beacon
-            thisRigidbody.AddForce(new Vector2(50.0f, 0.0f), ForceMode2D.Impulse);
+            if (situation == 0)
+            {
+                StartCoroutine(BeaconTimer());
+                situation++;
+            }            
+            thisRigidbody.AddForce(new Vector2(75.0f, 0.0f), ForceMode2D.Impulse);
             if (thisVector.x > (gameSystemScript.posPlayerOne.x + 100) && thisVector.x > (gameSystemScript.posPlayerTwo.x + 100))
             {
-                //shipParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-                
-                Destroy(this);
+                //shipParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);                
+                ParticleSystem tempParticle = this.GetComponentInChildren<ParticleSystem>();
+                tempParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                this.gameObject.SetActive(false);
+                Destroy(this.gameObject);
             }
         }
     }
 
     IEnumerator NetTimer()
     {
-        yield return new WaitForSeconds(2.0f);
-        Destroy(this);
+        yield return new WaitForSeconds(0.5f);
+        ParticleSystem tempParticle = this.GetComponentInChildren<ParticleSystem>();
+        tempParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        this.gameObject.SetActive(false);
+        Destroy(this.gameObject);
+    }
+
+    IEnumerator BeaconTimer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        beaconCollider.enabled = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -75,12 +99,24 @@ public class perkPrefabSystem : MonoBehaviour
                 {
                     gameSystemScript.CallForThePerkPrefab(1);
                 }
+                if (collision.gameObject.tag == "PlayerOne")
+                {
+                    Collider tempCollider2 = GameObject.FindWithTag("PlayerOne").GetComponent<Collider>();
+                    Collider tempCollider1 = this.GetComponent<Collider>();
+                    Physics.IgnoreCollision(tempCollider1, tempCollider2);
+                }
             }
             else if (this.tag == "Player Two")
             {
                 if (collision.gameObject.tag == "PlayerOne")
                 {
                     gameSystemScript.CallForThePerkPrefab(2);
+                }
+                if (collision.gameObject.tag == "PlayerTwo")
+                {
+                    Collider tempCollider1 = GameObject.FindWithTag("PlayerTwo").GetComponent<Collider>();
+                    Collider tempCollider2 = this.GetComponent<Collider>();
+                    Physics.IgnoreCollision(tempCollider1, tempCollider2);
                 }
             }
         }
@@ -92,12 +128,24 @@ public class perkPrefabSystem : MonoBehaviour
                 {
                     gameSystemScript.CallForThePerkPrefab(3);
                 }
+                if (collision.gameObject.tag == "PlayerOne")
+                {
+                    Collider tempCollider1 = GameObject.FindWithTag("PlayerOne").GetComponent<Collider>();
+                    Collider tempCollider2 = this.GetComponent<Collider>();
+                    Physics.IgnoreCollision(tempCollider1, tempCollider2);
+                } 
             }
             else if (this.tag == "PlayerTwo")
             {
                 if (collision.gameObject.tag == "PlayerOne")
                 {
                     gameSystemScript.CallForThePerkPrefab(4);
+                }
+                if (collision.gameObject.tag == "PlayerTwo")
+                {
+                    Collider tempCollider1 = GameObject.FindWithTag("PlayerTwo").GetComponent<Collider>();
+                    Collider tempCollider2 = this.GetComponent<Collider>();
+                    Physics.IgnoreCollision(tempCollider1, tempCollider2);
                 }
             }
         }        

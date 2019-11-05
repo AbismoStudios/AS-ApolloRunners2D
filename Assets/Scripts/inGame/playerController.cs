@@ -42,8 +42,7 @@ public class playerController : MonoBehaviour
     private bool collided = false;
 
     private GameObject playerCameraText1;
-    private GameObject playerCameraText2;
-    private bool associated = false;
+    private GameObject playerCameraText2;    
     private TextMeshProUGUI scoreText;
     private TextMeshProUGUI velocityText;
 
@@ -86,6 +85,7 @@ public class playerController : MonoBehaviour
         alreadyIniciated = 0;
 
         StartCoroutine(CheckVelocity());
+        StartCoroutine(ScoreTextTimer());
     }  
     
     public void ResetForReMatch()
@@ -157,7 +157,7 @@ public class playerController : MonoBehaviour
                     {
                         shipBody.AddForce(new Vector2(modeBreaker, 0.0f), ForceMode2D.Force);
                     }
-                        acelerating = false;
+                    acelerating = false;
                     if (changeAceleration == 0 && modeAceleration < shipX)
                     {
                         StartCoroutine(ABreaker());
@@ -165,9 +165,19 @@ public class playerController : MonoBehaviour
                 }
 
                 //perk
-                if ((Input.GetKeyDown(KeyCode.H)) || (Input.GetKeyDown(KeyCode.LeftControl)))
+                if ((Input.GetKeyDown(KeyCode.Joystick1Button5)) || (Input.GetKeyDown(KeyCode.LeftControl)))
                 {
                     playerPerkScript.CallThePerk();
+                }
+
+                //manual reset
+                if ((Input.GetKeyDown(KeyCode.Joystick1Button2)) || (Input.GetKeyDown(KeyCode.LeftShift)))
+                {
+                    if (acelerating == false)
+                    {
+                        this.transform.rotation = originalRotationValue;
+                        modeAceleration = 1;
+                    }
                 }
             }
             else if (player == 2)
@@ -234,9 +244,19 @@ public class playerController : MonoBehaviour
                 }
 
                 //perk
-                if ((Input.GetKeyDown(KeyCode.J)) || (Input.GetKeyDown(KeyCode.RightControl)))
+                if ((Input.GetKeyDown(KeyCode.Joystick2Button5)) || (Input.GetKeyDown(KeyCode.RightControl)))
                 {
                     playerPerkScript.CallThePerk();
+                }
+
+                //manual reset
+                if ((Input.GetKeyDown(KeyCode.Joystick2Button2)) || (Input.GetKeyDown(KeyCode.RightShift)))
+                {
+                    if (acelerating == false)
+                    {
+                        this.transform.rotation = originalRotationValue;
+                        modeAceleration = 1;
+                    }                    
                 }
             }
             else
@@ -294,14 +314,6 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
-        if (associated == true)
-        {   
-            Vector3 posYourShip = yourShip.transform.position;
-            Vector3 posAnotherShip = anotherShip.transform.position;
-            float atualDistance = posYourShip.x - posAnotherShip.x;            
-            scoreText.text = Math.Round(atualDistance, 2).ToString();
-        }
-
         //reset Rotation
         if (transform.rotation != originalRotationValue && collided == true)
         {            
@@ -323,8 +335,6 @@ public class playerController : MonoBehaviour
 
             playerCameraText2 = GameObject.Find("VelocityShip1");
             velocityText = playerCameraText2.GetComponent<TextMeshProUGUI>();
-
-            associated = true;
         }
         else if (player == 2)
         {
@@ -334,9 +344,7 @@ public class playerController : MonoBehaviour
             anotherShip = GameObject.Find("Player1Ship");
 
             playerCameraText2 = GameObject.Find("VelocityShip2");
-            velocityText = playerCameraText2.GetComponent<TextMeshProUGUI>();
-                       
-            associated = true;
+            velocityText = playerCameraText2.GetComponent<TextMeshProUGUI>();            
         }
         else
         {
@@ -418,6 +426,18 @@ public class playerController : MonoBehaviour
         collided = false;
         yield return new WaitForSeconds(rotationResetSpeed);
         transform.rotation = originalRotationValue;        
+    }
+
+    IEnumerator ScoreTextTimer()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.25f);
+            Vector3 posYourShip = yourShip.transform.position;
+            Vector3 posAnotherShip = anotherShip.transform.position;
+            float atualDistance = posYourShip.x - posAnotherShip.x;
+            scoreText.text = Math.Round(atualDistance, 2).ToString();
+        }        
     }
 
 

@@ -68,6 +68,9 @@ public class inGameSystem : MonoBehaviour
 
     public TextMeshProUGUI BothCameraText;
 
+    public GameObject bothCameraObj;
+    public trackCamera bothCameraScript;
+
     private int winnerPlayer = 0;
     private bool playingMatch = true;
     public bool someoneBurned = false;
@@ -92,7 +95,7 @@ public class inGameSystem : MonoBehaviour
         primarySystemScript.AssociatePrimarySystemAudio();
 
         //distancia da partida sem sandbox
-        necessaryDistance = 4000.0f;
+        necessaryDistance = 2000.0f;
 
 
         playerTimerSaver = playerTimerOptionInMin;
@@ -106,11 +109,12 @@ public class inGameSystem : MonoBehaviour
 
     void MatchStart()
     {
+        bothCameraScript.ResetOffset(posPlayerOne, posPlayerTwo);
         someoneBurned = false;
         someoneWon = false;
         StartCoroutine(GameTimerDisplay()); //MatchTimer
         playerOnePerkSystemScript.CallPerkTimer();
-        playerTwoPerkSystemScript.CallPerkTimer();
+        playerTwoPerkSystemScript.CallPerkTimer();        
     }
 
     void MatchReStart()
@@ -119,13 +123,14 @@ public class inGameSystem : MonoBehaviour
         playerOneScript.ResetForReMatch();
         playerTwoScript.ResetForReMatch();
 
+        bothCameraScript.ResetOffset(posPlayerOne, posPlayerTwo);
+
         //reset MatchTimer
         StopCoroutine(GameTimerDisplay());
         suddenDeathTimer = false;
         totalTimerSeconds = 0.0f;
         playerTimerOptionInMin = playerTimerSaver;
-        necessaryDistance = necessaryDistanceSaver;
-        //Debug.Log("Necessary Distance Saver " + necessaryDistanceSaver);
+        necessaryDistance = necessaryDistanceSaver;        
         playingMatch = true;        
         StartCoroutine(TimerOfRaceStart());
     }
@@ -288,6 +293,7 @@ public class inGameSystem : MonoBehaviour
         {            
             yield return new WaitForSeconds(1.0f);
             //3
+            bothCameraScript.ResetOffset(posPlayerOne, posPlayerTwo);
             BothCameraTextObj.transform.DOScale(2.0f, 0.0f);
             BothCameraTextObj.transform.DOScale(1.0f, 1.0f);
             BothCameraText.text = "3";
@@ -362,6 +368,9 @@ public class inGameSystem : MonoBehaviour
         BCTimerText = BCTimer.GetComponent<TextMeshProUGUI>();
 
         BlackBackground = GameObject.Find("BlackBackground");
+
+        bothCameraObj = GameObject.FindGameObjectWithTag("CameraListener");
+        bothCameraScript = bothCameraObj.GetComponent<trackCamera>();
     }
 
     void CalculateScore()

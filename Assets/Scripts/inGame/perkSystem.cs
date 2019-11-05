@@ -131,7 +131,7 @@ public class perkSystem : MonoBehaviour
         }
         else if (whatPerk == 1)
         {
-            perkText.SetText("Net");
+            perkText.SetText("Barrier");
         }
         else if (whatPerk == 2)
         {
@@ -149,31 +149,67 @@ public class perkSystem : MonoBehaviour
     {
         if (whatPlayer == 1)
         {
-            Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerOne.x - 44, inGameSystemScrypt.posPlayerOne.y, inGameSystemScrypt.posPlayerOne.z);
-            GameObject TempPerkNet = Instantiate(NetPrefab, tempPerkPosition, Quaternion.identity);
-            TempPerkNet.tag = "PlayerOne";
+            if (playerControllerScript.actualVelocity < 1000.0f)
+            {
+                Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerOne.x - 3, inGameSystemScrypt.posPlayerOne.y, inGameSystemScrypt.posPlayerOne.z);
+                GameObject TempPerkNet = Instantiate(NetPrefab, tempPerkPosition, Quaternion.identity);
+                TempPerkNet.tag = "PlayerOne";
+            }
+            else
+            {
+                Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerOne.x - 1, inGameSystemScrypt.posPlayerOne.y, inGameSystemScrypt.posPlayerOne.z);
+                GameObject TempPerkNet = Instantiate(NetPrefab, tempPerkPosition, Quaternion.identity);
+                TempPerkNet.tag = "PlayerOne";
+            }
+            
         }
         else if (whatPlayer == 2)
         {
-            Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerTwo.x - 44, inGameSystemScrypt.posPlayerTwo.y, inGameSystemScrypt.posPlayerTwo.z);
-            GameObject TempPerkNet = Instantiate(NetPrefab, tempPerkPosition, Quaternion.identity);
-            //GameObject TempPerkNet = Instantiate(NetPrefab, inGameSystemScrypt.player, Quaternion.identity);
-            TempPerkNet.tag = "PlayerTwo";
+            if (playerControllerScript.actualVelocity < 1000.0f)
+            {
+                Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerTwo.x - 3, inGameSystemScrypt.posPlayerTwo.y, inGameSystemScrypt.posPlayerTwo.z);
+                GameObject TempPerkNet = Instantiate(NetPrefab, tempPerkPosition, Quaternion.identity);
+                TempPerkNet.tag = "PlayerTwo";
+            }
+            else 
+            {
+                Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerTwo.x - 1, inGameSystemScrypt.posPlayerTwo.y, inGameSystemScrypt.posPlayerTwo.z);
+                GameObject TempPerkNet = Instantiate(NetPrefab, tempPerkPosition, Quaternion.identity);
+                TempPerkNet.tag = "PlayerTwo";
+            }            
         }
     }
     private void PerkBeacon()
     {
         if (whatPlayer == 1)
         {
-            Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerOne.x + 20, inGameSystemScrypt.posPlayerOne.y - 1.5f, inGameSystemScrypt.posPlayerOne.z);
-            GameObject TempPerkBeacon = Instantiate(BeaconPrefab, tempPerkPosition, Quaternion.identity);
-            TempPerkBeacon.tag = "PlayerOne";
+            if (playerControllerScript.actualVelocity < 3000.0f)
+            {
+                Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerOne.x + 20, inGameSystemScrypt.posPlayerOne.y - 1.5f, inGameSystemScrypt.posPlayerOne.z);
+                GameObject TempPerkBeacon = Instantiate(BeaconPrefab, tempPerkPosition, Quaternion.identity);
+                TempPerkBeacon.tag = "PlayerOne";
+            }
+            else
+            {
+                Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerOne.x + 30, inGameSystemScrypt.posPlayerOne.y - 1.5f, inGameSystemScrypt.posPlayerOne.z);
+                GameObject TempPerkBeacon = Instantiate(BeaconPrefab, tempPerkPosition, Quaternion.identity);
+                TempPerkBeacon.tag = "PlayerOne";
+            }            
         }
         else if (whatPlayer == 2)
         {
-            Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerTwo.x + 20, inGameSystemScrypt.posPlayerTwo.y - 1.5f, inGameSystemScrypt.posPlayerTwo.z);
-            GameObject TempPerkBeacon = Instantiate(BeaconPrefab, tempPerkPosition, Quaternion.identity);
-            TempPerkBeacon.tag = "PlayerTwo";
+            if (playerControllerScript.actualVelocity < 3000.0f)
+            {
+                Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerTwo.x + 20, inGameSystemScrypt.posPlayerTwo.y - 1.5f, inGameSystemScrypt.posPlayerTwo.z);
+                GameObject TempPerkBeacon = Instantiate(BeaconPrefab, tempPerkPosition, Quaternion.identity);
+                TempPerkBeacon.tag = "PlayerTwo";
+            }
+            else
+            {
+                Vector3 tempPerkPosition = new Vector3(inGameSystemScrypt.posPlayerTwo.x + 30, inGameSystemScrypt.posPlayerTwo.y - 1.5f, inGameSystemScrypt.posPlayerTwo.z);
+                GameObject TempPerkBeacon = Instantiate(BeaconPrefab, tempPerkPosition, Quaternion.identity);
+                TempPerkBeacon.tag = "PlayerTwo";
+            }            
         }
     }
 }
