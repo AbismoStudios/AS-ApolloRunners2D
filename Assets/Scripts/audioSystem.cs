@@ -8,11 +8,7 @@ public class audioSystem : MonoBehaviour
     public GameObject ListenerCameraObject;
 
     public Component[] sceneAudios;
-    public AudioSource[] sceneAudiosToPlay;
-    void Start()
-    {
-       
-    }    
+    public AudioSource[] sceneAudiosToPlay;    
 
     public void AssociateGameAudio()
     {

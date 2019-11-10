@@ -17,8 +17,7 @@ public class perkPrefabSystem : MonoBehaviour
     public inGameSystem gameSystemScript;
 
     private BoxCollider2D beaconCollider;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         thisPerk = this.gameObject;
@@ -27,36 +26,29 @@ public class perkPrefabSystem : MonoBehaviour
         gameSystemScript = inGameSystemObj.GetComponent<inGameSystem>();
         situation = 0;
 
-        if (whatPerk == 1)
-        {
-            
-        }        
-        else if (whatPerk == 2)
+        if (whatPerk == 2)
         {
             beaconCollider = this.GetComponent<BoxCollider2D>();
             beaconCollider.enabled = false;
             this.transform.DOScale(3.0f, 0.0f);
-            this.transform.DOScale(5.0f, 2.5f);
+            this.transform.DOScale(6.5f, 2.5f);
             ParticleSystem tempParticleObj = GetComponentInChildren<ParticleSystem>();
             tempParticleObj.transform.DOScale(3.0f, 0.0f);
-            tempParticleObj.transform.DOScale(5.0f, 2.5f);
+            tempParticleObj.transform.DOScale(6.5f, 2.5f);
         }
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         thisVector = this.transform.position;
 
         if (whatPerk == 1 && situation == 0)
-        {
-            //net 
+        {            
             StartCoroutine(NetTimer());
             situation++;
         }        
         else if (whatPerk == 2)
         {
-            //beacon
             if (situation == 0)
             {
                 StartCoroutine(BeaconTimer());

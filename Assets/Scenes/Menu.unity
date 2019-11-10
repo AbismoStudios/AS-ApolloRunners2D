@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 229327094}
   - component: {fileID: 229327093}
   - component: {fileID: 229327092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BSair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0, g: 0.9897847, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0, g: 0.9897847, b: 1, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 5
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 326800628}
   - component: {fileID: 326800629}
   m_Layer: 0
-  m_Name: AudioMenuBottom
+  m_Name: AudioMenuBottom01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 344925827}
   - component: {fileID: 344925829}
   - component: {fileID: 344925828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP) BTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 389893253}
   - component: {fileID: 389893255}
   - component: {fileID: 389893254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP) BSair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,7 +824,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v.1.5.1
+  m_Text: v.2
 --- !u!222 &457172986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -832,6 +832,79 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457172983}
+  m_CullTransparentMesh: 0
+--- !u!1 &623142212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623142213}
+  - component: {fileID: 623142215}
+  - component: {fileID: 623142214}
+  m_Layer: 9
+  m_Name: ImageTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &623142213
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623142212}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 17.23941, y: 9.3186, z: 9.3186}
+  m_Children: []
+  m_Father: {fileID: 1392919460}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -55, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &623142214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623142212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d76406936d8042e47b33eed01f47b0ec, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &623142215
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623142212}
   m_CullTransparentMesh: 0
 --- !u!1 &749170773
 GameObject:
@@ -845,7 +918,7 @@ GameObject:
   - component: {fileID: 749170777}
   - component: {fileID: 749170776}
   - component: {fileID: 749170775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BIniciar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +969,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0, g: 0.9897847, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0, g: 0.9897847, b: 1, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 5
     m_FadeDuration: 0.5
   m_SpriteState:
@@ -1020,7 +1093,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1100,6 +1173,12 @@ MonoBehaviour:
   actualSceneName: 
   situationSceneSystem: 0
   whichPlayerIsTheVictoryOne: 0
+  mainMenuCamera: {fileID: 0}
+  bIniciar: {fileID: 749170775}
+  bTutorial: {fileID: 2124793888}
+  bSair: {fileID: 229327092}
+  gameLogo: {fileID: 2065681693}
+  tutorialImage: {fileID: 623142214}
 --- !u!4 &955906773
 Transform:
   m_ObjectHideFlags: 0
@@ -1223,6 +1302,7 @@ RectTransform:
   - {fileID: 749170774}
   - {fileID: 2124793887}
   - {fileID: 229327091}
+  - {fileID: 623142213}
   m_Father: {fileID: 925069297}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1336,7 +1416,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.682
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1429,7 +1509,7 @@ GameObject:
   - component: {fileID: 1781152337}
   - component: {fileID: 1781152339}
   - component: {fileID: 1781152338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP) BIniciar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1631,7 +1711,7 @@ GameObject:
   - component: {fileID: 2065681692}
   - component: {fileID: 2065681694}
   - component: {fileID: 2065681693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1711,7 +1791,7 @@ GameObject:
   - component: {fileID: 2124793890}
   - component: {fileID: 2124793889}
   - component: {fileID: 2124793888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1762,7 +1842,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0, g: 0.9897847, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0, g: 0.9897847, b: 1, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 5
     m_FadeDuration: 0.1
   m_SpriteState:

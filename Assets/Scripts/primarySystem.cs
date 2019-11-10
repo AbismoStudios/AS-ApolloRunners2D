@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class primarySystem : MonoBehaviour
 {
@@ -13,10 +15,23 @@ public class primarySystem : MonoBehaviour
     public int situationSceneSystem = 0;
 
     public int whichPlayerIsTheVictoryOne;
+
+    public Camera mainMenuCamera;
+
+    [Header("Menu Objects")]    
+    public Button bIniciar;
+    public Button bTutorial;
+    public Button bSair;
+
+    public Image gameLogo;
+    public Image tutorialImage;
+
+    private bool tutorialScreen;    
     
     void Start()
     {
         Cursor.visible = false;
+        tutorialScreen = false;
         playerVictoryScreenText = "";
         AssociatePrimarySystemAudio();        
     }
@@ -44,15 +59,13 @@ public class primarySystem : MonoBehaviour
    
     void Update()
     {
-        if (actualSceneName == "Menu" && situationSceneSystem == 0)
+        if (actualSceneName == "Menu" && tutorialScreen == true)
         {
-            //Not included on Alpha
-            //situationSceneSystem++;
-        }  
-        if (actualSceneName == "Game" && situationSceneSystem == 0)
-        {
-
-        }
+            if (Input.anyKey)
+            {
+                ChangeMenuImages(1);
+            }
+        }          
 
         if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton9)))
         {
@@ -68,26 +81,72 @@ public class primarySystem : MonoBehaviour
 
     public void ButtonIniciateGame()
     {
-        audioSystemScript.PlayTheSound(1);
-        audioSystemScript.StopTheSound(0);
-        StartCoroutine(MenuTimer(1));
+        if (tutorialScreen == false)
+        {
+            audioSystemScript.PlayTheSound(1);
+            audioSystemScript.StopTheSound(0);
+            StartCoroutine(MenuTimer(1));
+        }        
     }
 
     public void ButtonTutorial()
-    {
-        //tutorialButton
-        StartCoroutine(MenuTimer(2));
+    {    
+        if (tutorialScreen == false)
+        {
+            audioSystemScript.PlayTheSound(1);
+            StartCoroutine(MenuTimer(2));
+        }        
     }
 
     public void ButtonSair()
     {
-        StartCoroutine(MenuTimer(3));
+        if (tutorialScreen == false)
+        {
+            audioSystemScript.PlayTheSound(1);
+            StartCoroutine(MenuTimer(3));
+        }        
     }
 
     public void SkipVictoryScreen()
     {
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
-    }    
+    }
+    
+    void ChangeMenuImages  (int whichChance)
+    {
+        if (whichChance == 1)
+        {
+            bIniciar.interactable = true;
+            bTutorial.interactable = true;
+            bSair.interactable = true;
+            tutorialScreen = false;
+
+            Color tempColor = gameLogo.color;
+            tempColor.a = 1;
+            gameLogo.color = tempColor;
+
+            Color tempColorTutorial = tutorialImage.color;
+            tempColorTutorial.a = 0;
+            tutorialImage.color = tempColorTutorial;
+
+            bTutorial.Select();
+        }
+        else if (whichChance == 2)
+        {
+            bIniciar.interactable = false;
+            bTutorial.interactable = false;
+            bSair.interactable = false;
+            tutorialScreen = true;
+
+            Color tempColor = gameLogo.color;
+            tempColor.a = 0;
+            gameLogo.color = tempColor;
+
+            Color tempColorTutorial = tutorialImage.color;
+            tempColorTutorial.a = 1;
+            tutorialImage.color = tempColorTutorial;
+        }
+    }
 
     IEnumerator MenuTimer(int whichButton)
     {
@@ -98,7 +157,7 @@ public class primarySystem : MonoBehaviour
         }
         else if (whichButton == 2)
         {
-            //tutorialButton
+            ChangeMenuImages(2);                       
         }
         else if (whichButton == 3)
         {

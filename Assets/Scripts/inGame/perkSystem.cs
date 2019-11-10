@@ -24,25 +24,17 @@ public class perkSystem : MonoBehaviour
     private int whatPerk;
 
     public ParticleSystem burstParticleSystem;
-
-    // Start is called before the first frame update
+   
     void Start()
     {
         Associate();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
             perkText.SetText("Testezinho");
-        }
-
-        if (playerHavePerk == true)
-        {
-            //change text
-            // perkText.DOColor(Color.white, 0.5f);
         }
     }
 
@@ -77,7 +69,7 @@ public class perkSystem : MonoBehaviour
     {
         if (playerHavePerk == true)
         {
-            Debug.Log("Perk usado");
+            //Debug.Log("Perk usado");
             if (whatPerk == 0)
             {
                 PerkBurst();
@@ -144,6 +136,7 @@ public class perkSystem : MonoBehaviour
     {
         playerControllerScript.modeAceleration = 4;
         burstParticleSystem.Play();
+        inGameSystemScrypt.CallPerkAudio(4);
     }
     private void PerkNet()
     {
@@ -178,6 +171,7 @@ public class perkSystem : MonoBehaviour
                 TempPerkNet.tag = "PlayerTwo";
             }            
         }
+        inGameSystemScrypt.CallPerkAudio(5);
     }
     private void PerkBeacon()
     {
@@ -211,5 +205,6 @@ public class perkSystem : MonoBehaviour
                 TempPerkBeacon.tag = "PlayerTwo";
             }            
         }
-    }
+        inGameSystemScrypt.CallPerkAudio(6);
+    }    
 }

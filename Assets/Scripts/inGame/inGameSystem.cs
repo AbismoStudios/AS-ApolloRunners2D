@@ -477,6 +477,11 @@ public class inGameSystem : MonoBehaviour
         }
     }
 
+    public void CallPerkAudio (int whichAudio)
+    {
+        audioSystemScript.PlayTheSound(whichAudio);
+    }
+
     public void FatalError()
     {
         Debug.Log("FatalError");
