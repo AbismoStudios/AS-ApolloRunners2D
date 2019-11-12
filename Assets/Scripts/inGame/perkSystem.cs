@@ -28,15 +28,7 @@ public class perkSystem : MonoBehaviour
     void Start()
     {
         Associate();
-    }
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            perkText.SetText("Testezinho");
-        }
-    }
+    }    
 
     private void Associate()
     {
@@ -68,8 +60,7 @@ public class perkSystem : MonoBehaviour
     public void CallThePerk()
     {
         if (playerHavePerk == true)
-        {
-            //Debug.Log("Perk usado");
+        {            
             if (whatPerk == 0)
             {
                 PerkBurst();
@@ -84,11 +75,7 @@ public class perkSystem : MonoBehaviour
             }
 
             StartCoroutine(PerkTimer());
-        }
-        else
-        {
-            Debug.Log("Perk indisponível");
-        }
+        }        
     }
 
     public IEnumerator PerkTimer()

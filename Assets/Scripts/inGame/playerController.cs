@@ -52,8 +52,7 @@ public class playerController : MonoBehaviour
     private Vector2 yourOriginalPosition;
     
     void Start()
-    {
-        //rigidbod
+    {        
         shipBody = GetComponent<Rigidbody2D>();
 
         //Score of the ship and another texts
@@ -410,8 +409,7 @@ public class playerController : MonoBehaviour
         changeAceleration++;
         if (acelerating == true)
         {
-            modeAceleration = modeAceleration * 0.90f;
-            //0.25f
+            modeAceleration = modeAceleration * 0.90f;            
         }
         else
         {
@@ -439,7 +437,6 @@ public class playerController : MonoBehaviour
             scoreText.text = Math.Round(atualDistance, 2).ToString();
         }        
     }
-
 
     //colliders 
     void OnCollisionEnter2D(Collision2D collision)

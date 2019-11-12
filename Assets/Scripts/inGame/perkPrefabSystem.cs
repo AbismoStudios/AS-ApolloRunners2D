@@ -56,8 +56,7 @@ public class perkPrefabSystem : MonoBehaviour
             }            
             thisRigidbody.AddForce(new Vector2(75.0f, 0.0f), ForceMode2D.Impulse);
             if (thisVector.x > (gameSystemScript.posPlayerOne.x + 100) && thisVector.x > (gameSystemScript.posPlayerTwo.x + 100))
-            {
-                //shipParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);                
+            {                
                 ParticleSystem tempParticle = this.GetComponentInChildren<ParticleSystem>();
                 tempParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
                 this.gameObject.SetActive(false);

@@ -229,7 +229,7 @@ public class inGameSystem : MonoBehaviour
 
     void CheckSandbox()
     {
-        //Not included on Alpha
+        //Not included on this version
     }
 
     public void EndOfMatch(int whichOneBurned)
@@ -428,8 +428,7 @@ public class inGameSystem : MonoBehaviour
             }
 
             if ((playerTimerSaver / 2) == playerTimerOptionInMin && totalTimerSeconds == 0)
-            {
-                //Debug.Log("Metade do tempo");
+            {                
                 suddenDeathTimer = true;
             }       
 
@@ -485,5 +484,6 @@ public class inGameSystem : MonoBehaviour
     public void FatalError()
     {
         Debug.Log("FatalError");
+        Application.Quit();
     }
 }

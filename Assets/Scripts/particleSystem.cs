@@ -10,13 +10,12 @@ public class particleSystem : MonoBehaviour
 
     private float particleShipSpeed;
     private float particleShipLifetime;
-    // Start is called before the first frame update
+    
     void Start()
     {
         Associate();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         particleShipSpeed = (playerShipScript.actualVelocity / 100) * 5;

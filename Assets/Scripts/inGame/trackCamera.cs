@@ -95,10 +95,8 @@ public class trackCamera : MonoBehaviour
     }    
 
     void TakeVector()
-    {
-        //pos1 = ship.transform.position;
-        pos1 = new Vector2(ship.transform.position.x, ship.transform.position.y);
-        //pos2 = secondShip.transform.position;
+    {        
+        pos1 = new Vector2(ship.transform.position.x, ship.transform.position.y);        
         pos2 = new Vector2(secondShip.transform.position.x, secondShip.transform.position.y);
         if (pos1.x > pos2.x)
         {
