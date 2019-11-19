@@ -117,11 +117,17 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -131,12 +137,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/Nícolas/Nuvem/Google Drive/Abismo Games/AS-ApolloRunners2D/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

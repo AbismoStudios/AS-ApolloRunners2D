@@ -7078,7 +7078,7 @@ MonoBehaviour:
   isGlobal: 1
   blendDistance: 0
   weight: 1
-  priority: 0
+  priority: 1
 --- !u!1 &1368555057
 GameObject:
   m_ObjectHideFlags: 0
@@ -8619,7 +8619,7 @@ MonoBehaviour:
   isGlobal: 1
   blendDistance: 0
   weight: 1
-  priority: 0
+  priority: 1
 --- !u!1 &1788124001
 GameObject:
   m_ObjectHideFlags: 0
@@ -14543,7 +14543,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 7766276001439725201}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 4294967295
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 1
@@ -14615,7 +14615,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14775,7 +14775,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 7766276001509084510}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 4294967295
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 1
@@ -14853,7 +14853,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7766276001509084498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19, y: -10.9, z: -11.979551}
+  m_LocalPosition: {x: 19, y: -10.31, z: -11.979551}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7766276001237743596}
@@ -14888,7 +14888,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
