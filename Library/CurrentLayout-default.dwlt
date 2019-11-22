@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -388,7 +388,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c62dfffff42dffff1a2effffa22effffc22effffe433ffff1234ffffea34ffff7c35ffff9c35ffff905bffffa85fffff287dffff087effffa682ffff2eb1ffffaabbffff50bcffff1ee3ffff9cf8ffff3efbffffdc370000f03700000a380000263a0000463e00000c440000da450000d4490000bc4b0000
+      m_ExpandedIDs: 02c1ffff34c1ffff5ac1ffffe2c1ffff02c2ffff9eccffffd0ccfffff6ccffff7ecdffff9ecdffffc8d7ffff0edaffff40daffff18dbffff7cdbffffaadbffff96f9ffff3efbffff68370000be370000c8370000da3700000438000008380000aa3e0000c43e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -473,9 +473,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.5573621, y: 0.5062129, z: 375.9668}
+    m_Target: {x: 0.90553766, y: 0.1727873, z: 387.32227}
     speed: 2
-    m_Value: {x: 0.5573621, y: 0.5062129, z: 375.9668}
+    m_Value: {x: 0.90553766, y: 0.1727873, z: 387.32227}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -508,9 +508,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 15.478679
+    m_Target: 15.505634
     speed: 2
-    m_Value: 15.478679
+    m_Value: 14.837928
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -601,20 +601,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "D:\\N\xEDcolas\\Nuvem\\Google Drive\\Abismo Games\\AS-ApolloRunners2D"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ca340000
-    m_LastClickedID: 13514
-    m_ExpandedIDs: 00000000862e00006a2f0000aa2f000070310000f8310000ca34000000ca9a3b
+    m_SelectedIDs: b8330000
+    m_LastClickedID: 13240
+    m_ExpandedIDs: 00000000882e00006c2f0000ac2f0000d6300000fa310000b8330000ca34000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,7 +642,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000862e00006a2f0000aa2f0000f8310000ca340000
+    m_ExpandedIDs: 00000000882e00006c2f0000ac2f000072310000fa310000ca340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

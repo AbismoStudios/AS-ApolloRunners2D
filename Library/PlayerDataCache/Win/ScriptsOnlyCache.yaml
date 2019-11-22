@@ -49,7 +49,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -89,47 +88,47 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9742}
+      Script: {instanceID: 9744}
     - Class: 114
-      Script: {instanceID: 9762}
+      Script: {instanceID: 9764}
     - Class: 114
-      Script: {instanceID: 9862}
+      Script: {instanceID: 9864}
     - Class: 114
-      Script: {instanceID: 9874}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 9884}
+      Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 10000}
+      Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 10130}
+      Script: {instanceID: 10132}
     - Class: 114
-      Script: {instanceID: 10268}
+      Script: {instanceID: 10270}
     - Class: 114
-      Script: {instanceID: 10444}
+      Script: {instanceID: 10446}
     - Class: 114
-      Script: {instanceID: 10624}
+      Script: {instanceID: 10626}
     - Class: 114
-      Script: {instanceID: 10716}
+      Script: {instanceID: 10718}
     - Class: 114
-      Script: {instanceID: 10730}
+      Script: {instanceID: 10732}
     - Class: 114
-      Script: {instanceID: 10800}
+      Script: {instanceID: 10802}
     - Class: 114
-      Script: {instanceID: 11112}
+      Script: {instanceID: 11114}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11320}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11544}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 11668}
+      Script: {instanceID: 11670}
     - Class: 114
-      Script: {instanceID: 11728}
+      Script: {instanceID: 11730}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11794}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -178,47 +177,47 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9742}
+      Script: {instanceID: 9744}
     - Class: 114
-      Script: {instanceID: 9762}
+      Script: {instanceID: 9764}
     - Class: 114
-      Script: {instanceID: 9874}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 9960}
+      Script: {instanceID: 9962}
     - Class: 114
-      Script: {instanceID: 10000}
+      Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 10130}
+      Script: {instanceID: 10132}
     - Class: 114
-      Script: {instanceID: 10242}
+      Script: {instanceID: 10244}
     - Class: 114
-      Script: {instanceID: 10444}
+      Script: {instanceID: 10446}
     - Class: 114
-      Script: {instanceID: 10466}
+      Script: {instanceID: 10468}
     - Class: 114
-      Script: {instanceID: 10624}
+      Script: {instanceID: 10626}
     - Class: 114
-      Script: {instanceID: 10716}
+      Script: {instanceID: 10718}
     - Class: 114
-      Script: {instanceID: 10730}
+      Script: {instanceID: 10732}
     - Class: 114
-      Script: {instanceID: 10774}
+      Script: {instanceID: 10776}
     - Class: 114
-      Script: {instanceID: 10874}
+      Script: {instanceID: 10876}
     - Class: 114
-      Script: {instanceID: 11112}
+      Script: {instanceID: 11114}
     - Class: 114
-      Script: {instanceID: 11126}
+      Script: {instanceID: 11128}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11320}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11568}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11668}
+      Script: {instanceID: 11670}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11794}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -261,35 +260,35 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9742}
+      Script: {instanceID: 9744}
     - Class: 114
-      Script: {instanceID: 9762}
+      Script: {instanceID: 9764}
     - Class: 114
-      Script: {instanceID: 9818}
+      Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 9874}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 10000}
+      Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 10130}
+      Script: {instanceID: 10132}
     - Class: 114
-      Script: {instanceID: 10444}
+      Script: {instanceID: 10446}
     - Class: 114
-      Script: {instanceID: 10624}
+      Script: {instanceID: 10626}
     - Class: 114
-      Script: {instanceID: 10716}
+      Script: {instanceID: 10718}
     - Class: 114
-      Script: {instanceID: 10730}
+      Script: {instanceID: 10732}
     - Class: 114
-      Script: {instanceID: 11112}
+      Script: {instanceID: 11114}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11320}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11668}
+      Script: {instanceID: 11670}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11794}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -900,4 +899,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/VictoryScreen.unity
-  playerPath: "C:/Users/L\xFAcio/Desktop/Projeto Integrado Backup/Last Playtest/ApolloRunners2D.exe"
+  playerPath: "C:/Users/L\xFAcio/Desktop/Projeto Integrado Backup/Build PUC AS-AR2D-v2.2/ApolloRunners2D.exe"
