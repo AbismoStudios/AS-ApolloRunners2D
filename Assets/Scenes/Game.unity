@@ -6517,6 +6517,7 @@ MonoBehaviour:
   playerTwoScore: 0
   playerTimerOptionInMin: 2
   BothCameraText: {fileID: 0}
+  BackgroundStartText: {fileID: 1555420286}
   bothCameraObj: {fileID: 0}
   bothCameraScript: {fileID: 0}
   someoneBurned: 0

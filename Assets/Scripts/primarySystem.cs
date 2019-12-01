@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -24,14 +25,22 @@ public class primarySystem : MonoBehaviour
     public Button bSair;
 
     public Image gameLogo;
-    public Image tutorialImage;
+    public Image tutorialImagePT;
+    public Image tutorialImageEN;
 
-    private bool tutorialScreen;    
-    
+    private bool tutorialScreen;
+    public string whichLang = "EN";
+
+    public TextMeshProUGUI btnStartText;    
+    public TextMeshProUGUI btnQuitText;
+    public TextMeshProUGUI btnLangText;
+
     void Start()
     {
         Cursor.visible = false;
         tutorialScreen = false;
+        whichLang = "EN";
+        ChangeLanguage();
         playerVictoryScreenText = "";
         AssociatePrimarySystemAudio();        
     }
@@ -107,6 +116,41 @@ public class primarySystem : MonoBehaviour
         }        
     }
 
+    public void ButtonLang()
+    {
+        audioSystemScript.PlayTheSound(1);
+        StartCoroutine(MenuTimer(4));
+    }
+
+    void CheckLanguage()
+    {
+        if (whichLang == "EN")
+        {
+            whichLang = "PT";
+        }
+        else if (whichLang == "PT")
+        {
+            whichLang = "EN";
+        }
+        ChangeLanguage();
+    }
+
+    void ChangeLanguage()
+    {
+        if (whichLang == "EN")
+        {
+            btnStartText.text = "Start";
+            btnQuitText.text = "Quit";
+            btnLangText.text = "EN";
+        }
+        else if (whichLang == "PT")
+        {
+            btnStartText.text = "Iniciar";
+            btnQuitText.text = "Sair";
+            btnLangText.text = "PT";
+        }
+    }
+
     public void SkipVictoryScreen()
     {
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
@@ -125,9 +169,18 @@ public class primarySystem : MonoBehaviour
             tempColor.a = 1;
             gameLogo.color = tempColor;
 
-            Color tempColorTutorial = tutorialImage.color;
-            tempColorTutorial.a = 0;
-            tutorialImage.color = tempColorTutorial;
+            if (whichLang == "PT")
+            {
+                Color tempColorTutorial = tutorialImagePT.color;
+                tempColorTutorial.a = 0;
+                tutorialImagePT.color = tempColorTutorial;
+            }
+            else if (whichLang == "EN")
+            {
+                Color tempColorTutorial = tutorialImageEN.color;
+                tempColorTutorial.a = 0;
+                tutorialImageEN.color = tempColorTutorial;
+            }
 
             bTutorial.Select();
         }
@@ -142,9 +195,18 @@ public class primarySystem : MonoBehaviour
             tempColor.a = 0;
             gameLogo.color = tempColor;
 
-            Color tempColorTutorial = tutorialImage.color;
-            tempColorTutorial.a = 1;
-            tutorialImage.color = tempColorTutorial;
+            if (whichLang == "PT")
+            {
+                Color tempColorTutorial = tutorialImagePT.color;
+                tempColorTutorial.a = 1;
+                tutorialImagePT.color = tempColorTutorial;
+            }
+            else if (whichLang == "EN")
+            {
+                Color tempColorTutorial = tutorialImageEN.color;
+                tempColorTutorial.a = 1;
+                tutorialImageEN.color = tempColorTutorial;
+            }            
         }
     }
 
@@ -163,5 +225,9 @@ public class primarySystem : MonoBehaviour
         {
             Application.Quit();
         }        
+        else if (whichButton == 4)
+        {
+            CheckLanguage();
+        }
     }
 }

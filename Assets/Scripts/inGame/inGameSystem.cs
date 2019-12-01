@@ -67,6 +67,7 @@ public class inGameSystem : MonoBehaviour
     private TextMeshProUGUI BCScoreTwoText;
 
     public TextMeshProUGUI BothCameraText;
+    public TextMeshProUGUI BackgroundStartText;
 
     public GameObject bothCameraObj;
     public trackCamera bothCameraScript;
@@ -104,7 +105,16 @@ public class inGameSystem : MonoBehaviour
         iniciate = 0;
 
         BothCameraText.text = "";
-        SSNecessaryDistanceText.text = "-- " + Math.Round(necessaryDistance,0).ToString() + " --";        
+        SSNecessaryDistanceText.text = "-- " + Math.Round(necessaryDistance,0).ToString() + " --";
+
+        if (primarySystemScript.whichLang == "PT")
+        {
+            BackgroundStartText.text = "Pressione qualquer tecla para iniciar";
+        }
+        else if (primarySystemScript.whichLang == "EN")
+        {
+            BackgroundStartText.text = "Press any key to start";
+        }
     }
 
     void MatchStart()
