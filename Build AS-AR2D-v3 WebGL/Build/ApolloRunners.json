@@ -1,0 +1,17 @@
+{
+"companyName": "Abismo Studios",
+"productName": "ApolloRunners2D",
+"productVersion": "3",
+"dataUrl": "ApolloRunners.data.unityweb",
+"wasmCodeUrl": "ApolloRunners.wasm.code.unityweb",
+"wasmFrameworkUrl": "ApolloRunners.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "ApolloRunners.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.0f1"
+}
