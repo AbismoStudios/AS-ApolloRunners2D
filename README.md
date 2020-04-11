@@ -3,7 +3,7 @@
 # AS-ApolloRunners2D
 A racing game for my university
 
-This project use the following Unity Version (2019.2.9f1)
+This project use the following Unity Version (2019.3.0f6)
 
 # About the Game
 "Apollo Runners" is a racing game with spaceships, with the space as main theme and is developed with Pixel Art.
