@@ -223,7 +223,14 @@ public class primarySystem : MonoBehaviour
         }
         else if (whichButton == 3)
         {
-            Application.Quit();
+            #if (UNITY_EDITOR)
+                UnityEditor.EditorApplication.isPlaying = false;
+            #elif (UNITY_STANDALONE) 
+                Application.Quit();
+            #elif (UNITY_WEBGL)
+                Application.OpenURL("about:blank");
+            #endif
+            //Application.Quit();
         }        
         else if (whichButton == 4)
         {
